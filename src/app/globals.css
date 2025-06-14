@@ -96,6 +96,7 @@ li {
 .design-menu {
   background-color: var(--white-color);
   padding: 6px 20px;
+  border: 1px solid lightgray;
 
   & span {
     color: var(--gray-theme-color);
@@ -127,10 +128,14 @@ li {
 
 }
 textarea{
-  background-color: var(--white-color);
+
   border:1px solid #000000;
-  width: 400px;
-  height: 200px;
+
+}
+.design-area-canvas{
+    background-color: var(--white-color);
+  width: 600px;
+  height: 300px;
 }
 
 
@@ -141,6 +146,7 @@ textarea{
   justify-content: center;
   min-height: 80px;
   background-color: var(--white-color);
+  border: 1px solid lightgray;
 }
 .footer-btn{
 
@@ -197,6 +203,38 @@ textarea{
   height: calc(100vh - 64px);  
   /* resize: vertical;
   overflow: scroll; */
+  color: #000000 !important;
   background-color: var(--white-color);
+  border: 1px solid lightgray;
+  & button{
+    text-align: center;
+    color: var(--black-color);
+    border-bottom: 1px solid var(--gray-theme-color);
+    padding-block: 15px;
+    border-radius: 0px !important;
+    & svg {
+      margin: auto;
+      
+    }
+  }
+  
+}
+
+
+/* template */
+.template-ul{
+  padding: 0;
+  & li {
+    margin-block:20px ;
+  }
+}
+.template-search-input{
+  background-color: var(--white-color);
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+.template-image{
+  margin-top: 20px;
+  
 }
 /* body end  */

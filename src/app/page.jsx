@@ -8,14 +8,22 @@ import 'bootstrap/dist/js/bootstrap.bundle.min';
 import { useEffect, useState } from "react";
 import Template from "./component/Template";
 import Navbar from "./component/Navbar";
+import Text from "./component/Text";
 export default function Page() {
 
   const [alignment, setAlignment] = useState('left');
+  const [alignmentTwo, setAlignmentTwo] = useState('left');
   const [textSize, setTextSize] = useState(24);
+  const [textSizeTwo, setTextSizeTwo] = useState(24);
   const [textColor, setTextColor] = useState('#000000');
+  const [textColorTwo, setTextColorTwo] = useState('#000000')
   const [textTransform, setTextTransform] = useState("none")
-    const [canvasBackgroundColor, setCanvasBackgroundColor] = useState('#ffffff');
-    
+  const [textTransformTwo, setTextTransformTwo] = useState("none")
+  const [canvasBackgroundColor, setCanvasBackgroundColor] = useState('#ffffff');
+
+
+  
+
 
   useEffect(() => {
     import('bootstrap/dist/js/bootstrap.bundle.min');
@@ -88,10 +96,18 @@ export default function Page() {
   const handleIncrease = () => {
     setTextSize(prev => prev + 1);
   };
+   const handleIncreaseTwo = () => {
+    setTextSizeTwo(prev => prev + 1);
+  };
 
   const handleDecrease = () => {
     if (textSize > 1) {
       setTextSize(prev => prev - 1);
+    }
+  };
+    const handleDecreaseTwo = () => {
+    if (textSize > 1) {
+      setTextSizeTwo(prev => prev - 1);
     }
   };
 
@@ -105,8 +121,6 @@ export default function Page() {
       prev === "uppercase" ? "lowercase" : "uppercase"
     );
   };
-
-
 
   return (
     <>
@@ -133,10 +147,16 @@ export default function Page() {
                   ))}
                 </div>
                 <div className="design-area">
-                  <textarea
-                    className=""
-                    style={{ fontSize: `${textSize}px`, textAlign: alignment, color: textColor, textTransform: textTransform, background: canvasBackgroundColor, }}
-                  />
+                  <div className="design-area-canvas d-flex flex-col justify-content-center align-content-center" style={{ background: canvasBackgroundColor, }}>
+                    <input
+                      className=""
+                      style={{ fontSize: `${textSize}px`, textAlign: alignment, color: textColor, textTransform: textTransform, }}
+                    />
+                    <input type="text"
+                      style={{ fontSize: `${textSizeTwo}px`, textAlign: alignmentTwo, color: textColorTwo, textTransform: textTransformTwo, }}
+                    />
+                  </div>
+
                 </div>
                 <div className="design-footer">
                   <button type="button" class="btn  footer-btn">Save progress</button>
@@ -146,17 +166,21 @@ export default function Page() {
 
               <div className="col-lg-4">
                 <div className="d-flex align-items-start">
-                  <div className="nav flex-column nav-pills me-3 bg-light tabs-menu" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                  <div className="nav flex-column nav-pills me-3 tabs-menu" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <button className="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
-                      Template  
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M21 20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20C20.5523 3 21 3.44772 21 4V20ZM11 5H5V19H11V5ZM19 13H13V19H19V13ZM19 5H13V11H19V5Z"></path></svg>
+                      Template
                     </button>
                     <button className="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M13 6V21H11V6H5V4H19V6H13Z"></path></svg>
                       Text
                     </button>
                     <button className="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M15 8V4H5V20H19V8H15ZM3 2.9918C3 2.44405 3.44749 2 3.9985 2H16L20.9997 7L21 20.9925C21 21.5489 20.5551 22 20.0066 22H3.9934C3.44476 22 3 21.5447 3 21.0082V2.9918ZM11 9.5C11 10.3284 10.3284 11 9.5 11C8.67157 11 8 10.3284 8 9.5C8 8.67157 8.67157 8 9.5 8C10.3284 8 11 8.67157 11 9.5ZM17.5 17L13.5 10L8 17H17.5Z"></path></svg>
                       Image
                     </button>
                     <button className="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M11.2703 12.2162L15 6L23 21H2L9 8L11.2703 12.2162ZM12.3897 14.2378L14.9873 19H19.6667L14.8976 10.058L12.3897 14.2378ZM5.34843 19H12.6516L9 12.2185L5.34843 19ZM5.5 8C4.11929 8 3 6.88071 3 5.5C3 4.11929 4.11929 3 5.5 3C6.88071 3 8 4.11929 8 5.5C8 6.88071 6.88071 8 5.5 8Z"></path></svg>
                       Background
                     </button>
                   </div>
@@ -165,74 +189,44 @@ export default function Page() {
                       <Template />
                     </div>
                     <div className="tab-pane  " id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                      <div className="d-flex justify-content-between w-100">
-                        <button
-                          className="text-alignment"
-                          onClick={() => setAlignment('left')}
-                        >
-                          <Image
-                            src="/left.webp"
-                            width={40}
-                            height={40}
-                            alt="left align"
-                          />
-                        </button>
-                        <button
-                          className="text-alignment"
-                          onClick={() => setAlignment('center')}
-                        >
-                          <Image
-                            src="/center.webp"
-                            width={40}
-                            height={40}
-                            alt="center align"
-                          />
-                        </button>
-                        <button
-                          className="text-alignment"
-                          onClick={() => setAlignment('right')}
-                        >
-                          <Image
-                            src="/right.webp"
-                            width={40}
-                            height={40}
-                            alt="right align"
-                          />
-                        </button>
-                      </div>
-                      <div className="my-4 w-100">
-                        <button onClick={handleDecrease} className="size-btn btn-decrease">-</button>
-                        <input
-                          type="number"
-                          value={textSize}
-                          onChange={handleInputChange}
-                          style={{ width: "60px" }}
-                          className="font-size-input w-50"
-                        />
-                        <button className="size-btn btn-increase" onClick={handleIncrease}>+</button>
-                      </div>
-                      <div className="d-flex justify-content-around">
-                        <input
-                          type="color"
-                          name="" id=""
-                          value={textColor}
-                          onChange={(e) => setTextColor(e.target.value)}
-                          className="text-color-input" />
-                        <button className="size-btn" onClick={handleCapSamTextHandle}>
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M20.4668 8.69379L20.7134 8.12811C21.1529 7.11947 21.9445 6.31641 22.9323 5.87708L23.6919 5.53922C24.1027 5.35653 24.1027 4.75881 23.6919 4.57612L22.9748 4.25714C21.9616 3.80651 21.1558 2.97373 20.7238 1.93083L20.4706 1.31953C20.2942 0.893489 19.7058 0.893489 19.5293 1.31953L19.2761 1.93083C18.8442 2.97373 18.0384 3.80651 17.0252 4.25714L16.308 4.57612C15.8973 4.75881 15.8973 5.35653 16.308 5.53922L17.0677 5.87708C18.0555 6.31641 18.8471 7.11947 19.2866 8.12811L19.5331 8.69379C19.7136 9.10792 20.2864 9.10792 20.4668 8.69379ZM2 4C2 3.44772 2.44772 3 3 3H14V5H4V19H20V11H22V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4ZM7 8H17V11H15V10H13V14H14.5V16H9.5V14H11V10H9V11H7V8Z"></path></svg>
-                        </button>
-                      </div>
+                      <Text
+                        alignment={alignment}
+                        setAlignment={setAlignment}
+                            alignmentTwo={alignmentTwo}
+                        setAlignmentTwo={setAlignmentTwo}
+                        textSize={textSize}
+                        setTextSize={setTextSize}
+                           textSizeTwo={textSizeTwo}
+                        setTextSizeTwo={setTextSizeTwo}
+                        textColor={textColor}
+                        setTextColor={setTextColor}
+                        textColorTwo={textColorTwo}
+                        setTextColorTwo={setTextColorTwo}
+                        textTransform={textTransform}
+                        setTextTransform={setTextTransform}
+                        textTransformTwo={textTransformTwo}
+                        setTextTransformTwo={setTextTransformTwo}
+                        handleCapSamTextHandle={handleCapSamTextHandle}
+                        handleIncrease={handleIncrease}
+                        handleDecrease={handleDecrease}
+                        handleIncreaseTwo={handleIncreaseTwo}
+                        handleDecreaseTwo={handleDecreaseTwo}
+                        handleInputChange={handleInputChange}
+                      />
                     </div>
                     <div className="tab-pane " id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                       <p>Image</p>
                     </div>
                     <div className="tab-pane " id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                       <input
-                          type="color"
-                          name="" id=""
-                          value={canvasBackgroundColor}
-                          onChange={(e) => setCanvasBackgroundColor(e.target.value)}
-                          className="text-color-input" />
+                      <input
+                        type="color"
+                        name="" id=""
+                        value={canvasBackgroundColor}
+                        onChange={(e) => setCanvasBackgroundColor(e.target.value)}
+                        className="text-color-input" />
+
+
+
                     </div>
                   </div>
                 </div>
