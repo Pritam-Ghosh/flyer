@@ -152,11 +152,51 @@ textarea{
 .text-alignment{
   height: 50px;
   width: 50px;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
+  background-color: var(--white-color);
+}
+.font-size-input{
+  background-color: var(--white-color);
+  padding: 10px 2px;
+  text-align: center;
+}
+.size-btn{
+  background-color: var(--white-color);
+  padding: 10px 20px;
+  border: 1px solid lightgray;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
+}
+.btn-decrease{
+  border-radius: 8px 0 0 8px;
+  -webkit-border-radius: 8px 0 0 8px;
+  -moz-border-radius: 8px 0 0 8px;
+  -ms-border-radius: 8px 0 0 8px;
+  -o-border-radius: 8px 0 0 8px;
+}
+
+.btn-increase{ border-radius: 0 8px 8px 0; -webkit-border-radius: 0 8px 8px 0; -moz-border-radius: 0 8px 8px 0; -ms-border-radius: 0 8px 8px 0; -o-border-radius: 0 8px 8px 0;
+}
+.text-color-input{
+  width: 50px;
+  height: 50px;
+  border-radius: 12px ;
+  -webkit-border-radius: 12px ;
+  -moz-border-radius: 12px ;
+  -ms-border-radius: 12px ;
+  -o-border-radius: 12px ;
+}
+.col-lg-8,
+.col-lg-4{
+  padding: 0 !important;
+}
+.tabs-menu{
+  height: calc(100vh - 64px);  
+  /* resize: vertical;
+  overflow: scroll; */
+  background-color: var(--white-color);
 }
 /* body end  */
