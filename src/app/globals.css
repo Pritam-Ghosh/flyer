@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +23,140 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: "Inter", sans-serif;
+   background-color: #e3e3e3 !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+li {
+  list-style: none;
+}
+
+:root {
+  --theme-btn: #3f59f6;
+  --gray-theme-color: #9e9e9e;
+  --white-color: #ffffff;
+  --black-color: #000000;
+}
+
+
+/* :::::::::::navbar start:::::::::::: */
+
+.nav-color {
+  background-color: var(--black-color);
+
+  & a {
+    color: var(--white-color);
+  }
+}
+
+.navLogo {
+  font-size: 32px;
+}
+
+.nav-btn {
+  padding: 30px 6px;
+
+  &:nth-child(1) {
+    color: var(--white-color);
+    border: 1px solid var(--white-color);
+  }
+
+  &:nth-child(2) {
+    margin-left: 20px;
+  }
+}
+
+/* ::::::::::navbar end:::::::::::*/
+
+
+/* body start */
+.section-body{
+ 
+}
+/* sub menu:::::::::: */
+.design-menu {
+  background-color: var(--white-color);
+  padding: 6px 20px;
+
+  & span {
+    color: var(--gray-theme-color);
+    margin-left: 10px;
+    font-weight: 600;
+  }
+}
+
+
+.design-sub-menu {
+  display: flex;
+  align-items: center;
+}
+.design-sub-menu button{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+}
+
+
+/* canvas area */
+.design-area{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 180px);
+
+
+}
+textarea{
+  background-color: var(--white-color);
+  border:1px solid #000000;
+  width: 400px;
+  height: 200px;
+}
+
+
+/* design-footer */
+.design-footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+  background-color: var(--white-color);
+}
+.footer-btn{
+
+  border: 1px solid black !important;
+  color: black;
+}
+
+/* text-alignment */
+.text-alignment{
+  height: 50px;
+  width: 50px;
+  border: 1px solid gray;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+/* body end  */
